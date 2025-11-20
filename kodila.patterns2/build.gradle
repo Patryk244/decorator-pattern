@@ -1,20 +1,8 @@
-plugins {
-    id 'java'
-}
-
-group = 'com.example'
-version = '0.0.1-SNAPSHOT'
-
-repositories {
-    mavenCentral()
-}
+// The root build.gradle now manages plugins, versions, and repositories for this subproject.
 
 dependencies {
-    testImplementation platform('org.junit:junit-bom:5.10.0')
-    testImplementation 'org.junit.jupiter:junit-jupiter'
-    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
-}
-
-test {
-    useJUnitPlatform()
+    // Versions are managed by the dependencyManagement block in the root project
+    implementation 'org.springframework.boot:spring-boot-starter'
+    implementation 'org.springframework.boot:spring-boot-starter-aop'
+    // testImplementation for spring-boot-starter-test is already in the subprojects block in the root build.gradle
 }
